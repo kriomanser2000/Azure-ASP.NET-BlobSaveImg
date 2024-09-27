@@ -5,7 +5,13 @@ namespace ASPAzureBlobSaveImg.Data
 {
     public class MyAzureDb : DbContext
     {
-        public MyAzureDb(DbContextOptions<MyAzureDb> options) : base(options) { }
+        public MyAzureDb(DbContextOptions<MyAzureDb> options) : base(options) 
+        { 
+        }
         public DbSet<ImageRecord> ImageRecords { get; set; }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("AZURE_STORAGE_CONNECTION_STRING");
+        }
     }
 }
