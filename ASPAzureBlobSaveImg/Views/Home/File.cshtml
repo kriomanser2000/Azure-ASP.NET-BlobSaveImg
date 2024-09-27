@@ -1,0 +1,15 @@
+﻿@model ControlMediaFiles.Models.FileUploadViewModel
+
+<h2>Upload File</h2>
+<form asp-action="Upload" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="File" class="control-label"></label>
+        <input asp-for="File" class="form-control" type="file" />
+        <span asp-validation-for="File" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+@section Scripts 
+{
+    <partial name="_ValidationScriptsPartial" />
+}

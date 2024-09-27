@@ -9,6 +9,7 @@ namespace ASPAzureBlobSaveImg.Data
         { 
         }
         public DbSet<ImageRecord> ImageRecords { get; set; }
+        public DbSet<FileModel> Files { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("AZURE_STORAGE_CONNECTION_STRING");

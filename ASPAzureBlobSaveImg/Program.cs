@@ -1,3 +1,4 @@
+using ASPAzureBlobSaveImg.Services;
 using Azure.Storage;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
@@ -9,6 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddSingleton<ImageProcessingService>();
 
 builder.Services.AddSingleton(x =>
 {

@@ -13,3 +13,10 @@
         </li>
     }
 </ul>
+@foreach (var file in Model.Files)
+{
+    <div>
+        <h3>@file.FileName</h3>
+        <img src="@file.CompressedImageUrl" alt="Compressed Image" />
+    </div>
+}
