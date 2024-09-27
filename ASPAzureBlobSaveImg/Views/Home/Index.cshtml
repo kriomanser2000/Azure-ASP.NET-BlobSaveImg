@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<ImageRecord>
+
+<h2>Uploaded Images</h2>
+<ul>
+    @foreach (var image in Model)
+    {
+        <li>
+            <img src="@image.Url" alt="uplImg" width="200" />
+            <p>File Name: @image.FileName</p>
+        </li>
+    }
+</ul>
